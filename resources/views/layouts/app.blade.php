@@ -1,21 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-</head>
+@include('includes.header')
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -60,9 +45,10 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __(key: 'Logout') }}
                                     </a>
-                                    <a class="dropdown-item" href="{{ route(name: 'posts.index'}}>
-                                       {{ __(key: 'Post) }}
+                                    <a class="dropdown-item" href="{{ route(name: 'posts.index') }}">
+                                        {{ __(key: 'Post') }}
                                     </a>
+                                    
 
                                     <form id="logout-form" action="{{ route(name: 'logout') }}" method="POST" class="d-none">
                                         @csrf
