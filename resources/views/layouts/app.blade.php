@@ -55,13 +55,16 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item" href="{{ route(name: 'logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __(key: 'Logout') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route(name: 'posts.index'}}>
+                                       {{ __(key: 'Post) }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    <form id="logout-form" action="{{ route(name: 'logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
                                 </div>
